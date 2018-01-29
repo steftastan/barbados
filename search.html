@@ -2,8 +2,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
       <meta charset="UTF-8">
       <title>title</title>
   </head>
@@ -11,17 +14,17 @@
       <div>
           <!-- Navigation List -->
           <nav>
-              <ul>
-                  <li>Search</li>
-                  <li>Add</li>
+              <ul class="list-unstyled">
+                  <li><a class="btn btn-outline-primary" href="#" role="button">Search</a></li>
+                  <li><a class="btn btn-outline-primary" href="#" role="button">Add</a></li>
                   <!-- Options available for admin-type users -->
-                  <li>Tables</li>
-                  <li>Reporting</li>
-                  <li>Users</li>
+                  <li><a class="btn btn-outline-primary" href="#" role="button">Tables</a></li>
+                  <li><a class="btn btn-outline-primary" href="#" role="button">Reporting</a></li>
+                  <li><a class="btn btn-outline-primary" href="#" role="button">Users</a></li>
               </ul>
           </nav>
           <section>
-              <div class="container">
+              <div class="container-fluid">
                   <!-- Search Filters -->
                 <form class="row">
                   <!-- Column 1 -->
@@ -29,35 +32,41 @@
                     <h2>Registration</h2>
 
                     <div class="form-group row">
-                      <label for="search__registrationNumber">Registration Number</label>
-                      <input name="search__registrationNumber" type="text"/>
-                    </div>
-
-                    <div class="form-group row">
-                      <label for="search__station">Station</label>
-                      <div class="dropdown">
-                        <span class="caret"></span>
-                        <input type="text" name="search__station" class="dropdown-toggle" data-toggle="dropdown" />
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Station 1</a></li>
-                          <li><a href="#">Station 2</a></li>
-                          <li><a href="#">Station 3</a></li>
-                        </ul>
+                      <label class="col-sm-2 col-form-label" for="search__registrationNumber">Registration Number</label>
+                      <div class="col-sm-10">
+                        <input name="search__registrationNumber" class="form-control" type="text"/>
                       </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__registrationType">Registration Type</label>
-                      <div class="dropdown">
-                        <span class="caret"></span>
-                        <input type="text" name="search__registrationType" class="dropdown-toggle" data-toggle="dropdown" />
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Birth</a></li>
-                          <li><a href="#">Death</a></li>
-                          <li><a href="#">Deeds</a></li>
-                          <li><a href="#">Marriage</a></li>
-                          <li><a href="#">Wills</a></li>
-                        </ul>
+                      <label class="col-sm-2 col-form-label" for="search__station">Station</label>
+                      <div class="col-sm-10">
+                        <div class="dropdown">
+                          <span class="caret"></span>
+                          <input type="text" name="search__station" class="dropdown-toggle form-control" data-toggle="dropdown" />
+                          <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="#">Station 1</a></li>
+                            <li class="dropdown-item"><a href="#">Station 2</a></li>
+                            <li class="dropdown-item"><a href="#">Station 3</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2 col-form-label" for="search__registrationType">Registration Type</label>
+                      <div class="col-sm-10">
+                        <div class="dropdown">
+                          <span class="caret"></span>
+                          <input type="text" name="search__registrationType" class="dropdown-toggle form-control" data-toggle="dropdown" />
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Birth</a></li>
+                            <li><a href="#">Death</a></li>
+                            <li><a href="#">Deeds</a></li>
+                            <li><a href="#">Marriage</a></li>
+                            <li><a href="#">Wills</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -67,41 +76,53 @@
                     <h2>Individual</h2>
 
                     <div class="form-group row">
-                      <label for="search__nrn">National Registration #</label>
-                      <input name="search__nrn" type="text"/>
+                      <label class="col-sm-2 col-form-label" for="search__nrn">National Registration #</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" name="search__nrn" type="text"/>
+                      </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__firstName">First Name</label>
-                      <input name="search__firstName" type="text"/>
+                      <label class="col-sm-2 col-form-label" for="search__firstName">First Name</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" name="search__firstName" type="text"/>
+                      </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__lastName">Last Name</label>
-                      <input name="search__lastName" type="text"/>
+                      <label class="col-sm-2 col-form-label" for="search__lastName">Last Name</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" name="search__lastName" type="text"/>
+                      </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__address1">Address Line 1</label>
-                      <input name="search__address1" type="text"/>
+                      <label class="col-sm-2 col-form-label" for="search__address1">Address Line 1</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" name="search__address1" type="text"/>
+                      </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__address2">Address Line 2</label>
-                      <input name="search__address2" type="text"/>
+                      <label class="col-sm-2 col-form-label" for="search__address2">Address Line 2</label>
+                      <div class="col-sm-10">
+                        <input class="form-control" name="search__address2" type="text"/>
+                      </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__parish">Parish</label>
-                      <div class="dropdown">
-                        <span class="caret"></span>
-                        <input type="text" name="search__parish" class="dropdown-toggle" data-toggle="dropdown" />
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Parish 1</a></li>
-                          <li><a href="#">Parish 2</a></li>
-                          <li><a href="#">Parish 3</a></li>
-                          <li><a href="#">Parish 4</a></li>
-                        </ul>
+                      <label class="col-sm-2 col-form-label" for="search__parish">Parish</label>
+                      <div class="col-sm-10">
+                        <div class="dropdown">
+                          <span class="caret"></span>
+                          <input type="text" name="search__parish" class="dropdown-toggle form-control" data-toggle="dropdown" />
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Parish 1</a></li>
+                            <li><a href="#">Parish 2</a></li>
+                            <li><a href="#">Parish 3</a></li>
+                            <li><a href="#">Parish 4</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -111,36 +132,41 @@
                     <h2>By Date</h2>
 
                     <div class="form-group row">
-                      <label for="search__dateType">Type</label>
-                      <div class="dropdown">
-                        <span class="caret"></span>
-                        <input type="text" name="search__dateType" class="dropdown-toggle" data-toggle="dropdown" />
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Birth</a></li>
-                          <li><a href="#">Death</a></li>
-                          <li><a href="#">Deeds</a></li>
-                          <li><a href="#">Marriage</a></li>
-                          <li><a href="#">Wills</a></li>
-                        </ul>
+                      <label class="col-sm-2 col-form-label" for="search__dateType">Type</label>
+                      <div class="col-sm-10">
+                        <div class="dropdown">
+                          <span class="caret"></span>
+                          <input type="text" name="search__dateType" class="dropdown-toggle form-control" data-toggle="dropdown" />
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Birth</a></li>
+                            <li><a href="#">Death</a></li>
+                            <li><a href="#">Deeds</a></li>
+                            <li><a href="#">Marriage</a></li>
+                            <li><a href="#">Wills</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
 
                     <div class="form-group row">
-                      <label for="search__dateType">Date</label>
+                      <label class="col-sm-2 col-form-label" for="search__dateType">Date</label>
                       <!-- TODO: Investigate Date Dropdown Plugin -->
-                      <input type="text" name="search__date" />
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="search__date" />
+                      </div>
                     </div>
                   </div>
 
                   <div class="col-12">
-                    <input type="submit" value="Search"/>
-                    <input type="submit" value="Clear Criteria"/>
+                    <input type="submit" class="btn btn-success" value="Search"/>
+                    <input type="submit"class="btn btn-secondary" value="Clear Criteria"/>
                   </div>
                 </form>
           </div>
         </section>
       </div>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
   </body>
 </html>
