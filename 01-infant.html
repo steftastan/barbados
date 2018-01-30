@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+      <script src="scripts.js"></script>
+      <meta charset="UTF-8">
+      <title>title</title>
+  </head>
+  <body>
+      <div class="container-fluid">
+          <!-- Navigation List -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#" role="button">Search</a></li>
+                <li class="nav-item"><a data-toggle="dropdown" class="dropdown-toggle nav-link" href="#" role="button">Add</a>
+                  <div class="dropdown">
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Birth</a></li>
+                      <li><a class="dropdown-item" href="#">Death</a></li>
+                      <li><a class="dropdown-item" href="#">Deeds</a></li>
+                      <li><a class="dropdown-item" href="#">Marriage</a></li>
+                      <li><a class="dropdown-item" href="#">Wills</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Options available for admin-type users -->
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Tables</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Reporting</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Users</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <!-- Search Filters -->
+          <section class="my-4 p-3 bg-light rounded">
+
+            <div class="row">
+              <div class="col-4">
+                <h2>Add New Birth</h2>
+              </div>
+            </div>
+
+              <div class="row">
+
+                  <!-- Column 1 -->
+
+
+
+                  <div class="col-4">
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="infant__registrationNumber">Registration Number</label>
+                      <div class="col-sm-8">
+                        <div class="input-group mb-3">
+                          <input type="text" class="form-control" aria-describedby="infant__registrationNumber">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Search</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="infant__dateType">Date</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control border" name="infant__date" id="datepicker"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="infant__registrationType">Registration Type</label>
+                      <div class="col-sm-8">
+                        <div class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Birth</a></li>
+                            <li><a class="dropdown-item" href="#">Death</a></li>
+                            <li><a class="dropdown-item" href="#">Deeds</a></li>
+                            <li><a class="dropdown-item" href="#">Marriage</a></li>
+                            <li><a class="dropdown-item" href="#">Wills</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="col-4">
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="infant__nrn">Birth</label>
+                      <div class="col-sm-8">
+                        <input type="radio" id="live" name="birth" value="live">
+                        <label for="live">Live</label>
+                        <input type="radio" id="still" name="birth" value="still">
+                        <label for="still">Still</label>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="infant__firstName">Remarks</label>
+                      <div class="col-sm-8">
+                        <textarea class="form-control"></textarea>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Column 3 -->
+                  <div class="col-4">
+                    <h5>View Documents</h5>
+
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input type="submit" class="btn btn-primary btn-block" value="Note of Birth"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input type="submit" class="btn btn-primary btn-block" value="Birth Certificate"/>
+                      </div>
+                    </div>
+
+                  </div>
+          </div>
+        </section>
+
+        <!-- Infant Details Tabn -->
+        <section class="my-4 px-3 bg-light rounded">
+
+          <nav class="row navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#" role="button">Infant</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Father</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Mother</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Informant</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Birth</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="row">
+            <div class="col-12 border-bottom mb-4">
+              <h5>Personal Details</h5>
+            </div>
+          </div>
+
+            <div class="row">
+
+                <!-- Column 1 -->
+                <div class="col-4">
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__nrn">National Registration #</label>
+                    <div class="col-sm-8">
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" aria-describedby="infant__registrationNumber">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button">Search</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__lastName">First Name</label>
+                    <div class="col-sm-8">
+                      <input class="form-control border" name="infant__lastName" type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__lastName">Middle Name</label>
+                    <div class="col-sm-8">
+                      <input class="form-control border" name="infant__lastName" type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__lastName">Last Name</label>
+                    <div class="col-sm-8">
+                      <input class="form-control border" name="infant__lastName" type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__nrn">Gender</label>
+                    <div class="col-sm-8">
+                      <input type="radio" id="male" name="gender" value="male">
+                      <label for="male">Male</label>
+                      <input type="radio" id="female" name="gender" value="female">
+                      <label for="female">Female</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__dateType">Date</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control border" name="infant__date" id="datepicker"/>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-4">
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__parish">Place of Birth</label>
+                    <div class="col-sm-8">
+                      <div class="dropdown">
+                          <a name="infant__parish" data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Place 1</a></li>
+                          <li><a class="dropdown-item" href="#">Place 2</a></li>
+                          <li><a class="dropdown-item" href="#">Place 3</a></li>
+                          <li><a class="dropdown-item" href="#">Place 4</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__parish">Type of Place</label>
+                    <div class="col-sm-8">
+                      <div class="dropdown">
+                          <a name="infant__parish" data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Castle</a></li>
+                          <li><a class="dropdown-item" href="#">House</a></li>
+                          <li><a class="dropdown-item" href="#">Hospital</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__address1">Address Line 1</label>
+                    <div class="col-sm-8">
+                      <input class="form-control border" name="infant__address1" type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__address2">Address Line 2</label>
+                    <div class="col-sm-8">
+                      <input class="form-control border" name="infant__address2" type="text"/>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__parish">Parish</label>
+                    <div class="col-sm-8">
+                      <div class="dropdown">
+                          <a name="infant__parish" data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Parish 1</a></li>
+                          <li><a class="dropdown-item" href="#">Parish 2</a></li>
+                          <li><a class="dropdown-item" href="#">Parish 3</a></li>
+                          <li><a class="dropdown-item" href="#">Parish 4</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="infant__whenNamed">When Named</label>
+                    <div class="col-sm-8">
+                      <input class="form-control border" name="infant__whenNamed" type="text"/>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Column 3 -->
+                <!-- This is the column with the file access, should be available in all screens -->
+                <div class="col-4 border-left">
+                  <h5>Related Documents</h5>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">File Name</th>
+                          <th scope="col">Datatype</th>
+                          <th scope="col">Date Added</th>
+                          <th scope="col">Date Modified</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <input type="submit" class="btn btn-primary" value="View"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <input type="submit" class="btn btn-primary" value="View"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>
+                            <input type="submit" class="btn btn-primary" value="View"/>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+        </div>
+
+        <div class="row justify-content-between border-top">
+          <div class="col-1 pt-3">
+            <input type="submit" class="btn btn-primary" value="Clear All"/>
+          </div>
+
+          <div class="col-2 pt-3">
+            <input type="submit" class="btn btn-success btn-block" value="Save"/>
+            <input type="submit" class="btn btn-danger btn-block" value="Cancel"/>
+          </div>
+        </div>
+
+      </section>
+
+      </div>
+  </body>
+</html>

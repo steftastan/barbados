@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+      <script src="scripts.js"></script>
+      <meta charset="UTF-8">
+      <title>title</title>
+  </head>
+  <body>
+      <div class="container-fluid">
+          <!-- Navigation List -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+            <div class="collapse navbar-collapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="#" role="button">Search</a></li>
+                <li class="nav-item"><a data-toggle="dropdown" class="dropdown-toggle nav-link" href="#" role="button">Add</a>
+                  <div class="dropdown">
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Birth</a></li>
+                      <li><a class="dropdown-item" href="#">Death</a></li>
+                      <li><a class="dropdown-item" href="#">Deeds</a></li>
+                      <li><a class="dropdown-item" href="#">Marriage</a></li>
+                      <li><a class="dropdown-item" href="#">Wills</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- Options available for admin-type users -->
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Tables</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Reporting</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" role="button">Users</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <!-- Search Filters -->
+          <section class="my-4 p-3 bg-light rounded">
+              <div>
+                <form class="row">
+                  <!-- Column 1 -->
+                  <div class="col-4">
+                    <h2>Registration</h2>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__registrationNumber">Registration Number</label>
+                      <div class="col-sm-8">
+                        <input name="search__registrationNumber" class="form-control border" type="text"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__station">Station</label>
+                      <div class="col-sm-8">
+                        <div class="dropdown">
+                          <input type="text" name="search__station" class="dropdown-toggle border form-control" data-toggle="dropdown" />
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Station 1</a></li>
+                            <li><a class="dropdown-item" href="#">Station 2</a></li>
+                            <li><a class="dropdown-item" href="#">Station 3</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__registrationType">Registration Type</label>
+                      <div class="col-sm-8">
+                        <div class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Birth</a></li>
+                            <li><a class="dropdown-item" href="#">Death</a></li>
+                            <li><a class="dropdown-item" href="#">Deeds</a></li>
+                            <li><a class="dropdown-item" href="#">Marriage</a></li>
+                            <li><a class="dropdown-item" href="#">Wills</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="col-4">
+                    <h2>Individual</h2>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__nrn">National Registration #</label>
+                      <div class="col-sm-8">
+                        <input class="form-control border" name="search__nrn" type="text"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__firstName">First Name</label>
+                      <div class="col-sm-8">
+                        <input class="form-control border" name="search__firstName" type="text"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__lastName">Last Name</label>
+                      <div class="col-sm-8">
+                        <input class="form-control border" name="search__lastName" type="text"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__address1">Address Line 1</label>
+                      <div class="col-sm-8">
+                        <input class="form-control border" name="search__address1" type="text"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__address2">Address Line 2</label>
+                      <div class="col-sm-8">
+                        <input class="form-control border" name="search__address2" type="text"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__parish">Parish</label>
+                      <div class="col-sm-8">
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Parish 1</a></li>
+                            <li><a class="dropdown-item" href="#">Parish 2</a></li>
+                            <li><a class="dropdown-item" href="#">Parish 3</a></li>
+                            <li><a class="dropdown-item" href="#">Parish 4</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 3 -->
+                  <div class="col-4">
+                    <h2>By Date</h2>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__dateType">Type</label>
+                      <div class="col-sm-8">
+                        <div class="dropdown">
+                          <a data-toggle="dropdown" class="dropdown-toggle btn btn-block btn-light border bg-white text-right" href="#" role="button"></a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Birth</a></li>
+                            <li><a class="dropdown-item" href="#">Death</a></li>
+                            <li><a class="dropdown-item" href="#">Deeds</a></li>
+                            <li><a class="dropdown-item" href="#">Marriage</a></li>
+                            <li><a class="dropdown-item" href="#">Wills</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="search__dateType">Date</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control border" name="search__date" id="datepicker"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-3">
+                    <input type="submit" class="btn btn-success btn-block" value="Search"/>
+                    <input type="submit"class="btn btn-secondary btn-block" value="Clear Criteria"/>
+                  </div>
+                </form>
+          </div>
+        </section>
+
+        <!-- Search results-->
+        <section class="bg-light rounded">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Registration #</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">National Registration #</th>
+                <th scope="col">Registration Type</th>
+                <th scope="col">Address</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>
+                  <input type="submit" class="btn btn-primary" value="View Record"/>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>
+                  <input type="submit" class="btn btn-primary" value="View Record"/>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>
+                  <input type="submit" class="btn btn-primary" value="View Record"/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+  </body>
+</html>
